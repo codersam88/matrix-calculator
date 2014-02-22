@@ -2,5 +2,9 @@
 
     <string name="app_name">matrix calc</string>
     <string name="enter">Enter a Matrix</string>
+    <string name="erows">Enter number of rows</string>
+    <string name="ecols">Enter number of colums</string>
+    <string name="hrows">no of rows</string>
+    <string name="hcols">no of cols</string>
 
 </resources>

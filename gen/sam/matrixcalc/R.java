@@ -19,10 +19,15 @@ public final class R {
     public static final class layout {
         public static final int mainentrance=0x7f030000;
         public static final int mainentrance1=0x7f030001;
+        public static final int matrixdim=0x7f030002;
     }
     public static final class string {
         public static final int app_name=0x7f040000;
+        public static final int ecols=0x7f040003;
         public static final int enter=0x7f040001;
+        public static final int erows=0x7f040002;
+        public static final int hcols=0x7f040005;
+        public static final int hrows=0x7f040004;
     }
     public static final class style {
         /** 
