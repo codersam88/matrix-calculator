@@ -12,10 +12,11 @@ import android.widget.Button;
 public class EnterMat extends Activity{
 	Button enter;
 	Dime dim = new Dime();
+	Intent i;
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
-		final Intent i = new Intent(this,Dime.class);
+		i = new Intent(this,Dime.class);
 		setContentView(R.layout.mainentrance);
 		enter = (Button)findViewById(R.id.enter_matrix);
 		enter.setOnClickListener(new View.OnClickListener() {
