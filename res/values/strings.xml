@@ -6,5 +6,6 @@
     <string name="ecols">Enter number of colums</string>
     <string name="hrows">no of rows</string>
     <string name="hcols">no of cols</string>
+    <string name="takDim">Enter</string>
 
 </resources>

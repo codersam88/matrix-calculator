@@ -9,6 +9,7 @@
         android:layout_height="wrap_content"
         android:text="@string/erows"/>
     <EditText 
+        android:id="@+id/rows"
         android:layout_width="wrap_content"
        	android:layout_height="wrap_content"
        	android:hint="@string/hrows"/>
@@ -17,8 +18,14 @@
         android:layout_height="wrap_content"
         android:text="@string/ecols"/>
     <EditText 
+        android:id="@+id/cols"
         android:layout_width="wrap_content"
        	android:layout_height="wrap_content"
        	android:hint="@string/hrows"/>
+    <Button 
+        android:id="@+id/takeDim"
+        android:layout_width="wrap_content"
+       	android:layout_height="wrap_content"
+       	android:text="@string/takDim"/>
 
 </LinearLayout>
