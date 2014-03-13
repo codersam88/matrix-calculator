@@ -1,6 +1,7 @@
 package matrixCalc;
 
 import sam.matrixcalc.R;
+import android.R.integer;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,29 +15,35 @@ public class Dime extends Activity{
 	EditText cls;
 	Button bigB;
 	Intent i;
+	int rw;
+	int cl;
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.matrixdim);
-		/*getDims();
+		
 		i = new Intent(this,TakeMat.class);
 		bigB = ( Button)findViewById(R.id.takeDim);
 		bigB.setOnClickListener(new OnClickListener() {
 			
 			@Override
 			public void onClick(View v) {
-				//startActivity(i);
+				
+				getDims();
+				startActivity(i);
 				
 			}
-		});*/
+		});
 		
 	}
 	
 	void getDims(){
 		rws = (EditText)findViewById(R.id.rows);
 		cls = (EditText)findViewById(R.id.cols);
-		int rows = Integer.parseInt(rws.toString());
-		int cols = Integer.parseInt(cls.toString());
+		String rows = rws.getText().toString();
+		String cols = cls.getText().toString();
+		int rw=Integer.valueOf(rows);
+		int cl=Integer.valueOf(cols);
 		
 	}
 
