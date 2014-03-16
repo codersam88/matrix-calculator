@@ -12,6 +12,7 @@
         android:id="@+id/rows"
         android:layout_width="wrap_content"
        	android:layout_height="wrap_content"
+       	android:inputType="number"
        	android:hint="@string/hrows"/>
     <TextView 
         android:layout_width="wrap_content"
@@ -21,6 +22,7 @@
         android:id="@+id/cols"
         android:layout_width="wrap_content"
        	android:layout_height="wrap_content"
+       	android:inputType="number"
        	android:hint="@string/hrows"/>
     <Button 
         android:id="@+id/takeDim"

@@ -2,16 +2,21 @@ package matrixCalc;
 import sam.matrixcalc.R;
 import android.app.Activity;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
 public class TakeMat extends Activity{
 	LinearLayout lOut;
 	LinearLayout lIl[];
+	Button b1;
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		lOut= new LinearLayout(this);
+		b1 = new Button(this);
+		b1.setText("hi");
+		lOut.addView(b1);
 		//createSubLs(3);//for columns
 		//createSkel(5,6);//for rows
 		setContentView(lOut);
