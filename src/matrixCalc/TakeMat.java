@@ -9,16 +9,12 @@ import android.widget.LinearLayout;
 public class TakeMat extends Activity{
 	LinearLayout lOut;
 	LinearLayout lIl[];
-	Button b1;
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		lOut= new LinearLayout(this);
-		b1 = new Button(this);
-		b1.setText("hi");
-		lOut.addView(b1);
-		//createSubLs(3);//for columns
-		//createSkel(5,6);//for rows
+		createSubLs(2);//for rows
+		createSkel(2,2);//for rows
 		setContentView(lOut);
 
 	}
@@ -26,8 +22,9 @@ public class TakeMat extends Activity{
 	void createSubLs(int ll){
 		lIl=new LinearLayout[ll];
 		for(int i=0;i<ll;i++){
+			lIl[i] = new LinearLayout(this);
 			lIl[i].setOrientation(LinearLayout.HORIZONTAL);
-			lOut.addView(lIl[i]);
+			//lOut.addView(lIl[i]);
 
 		}
 	}
@@ -35,9 +32,13 @@ public class TakeMat extends Activity{
 		EditText etm[][]= new EditText[r][c];
 		for(int i=0; i < c; c ++){
 			for(int j=0; j<r;j++){
+				etm[i][j]= new EditText(this);
 				lIl[i].addView(etm[r][c]);
+				
 			}
+			lOut.addView(lIl[i]);
 		}
+		
 
 
 	}
