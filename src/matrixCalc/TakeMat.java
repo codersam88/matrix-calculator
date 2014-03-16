@@ -17,7 +17,7 @@ public class TakeMat extends Activity{
 		super.onCreate(savedInstanceState);
 		lOut= new LinearLayout(this);
 		lOut.setOrientation(LinearLayout.VERTICAL);
-		createSkel(2,2);//for rows
+		createSkel(3,4);//for rows
 		//createSubLs(2);
 		setContentView(lOut);
 
