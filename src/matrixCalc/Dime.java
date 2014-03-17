@@ -40,11 +40,11 @@ public class Dime extends Activity{
 	void getDims(){
 		rws = (EditText)findViewById(R.id.rows);
 		cls = (EditText)findViewById(R.id.cols);
-		String rows = rws.getText().toString();
-		String cols = cls.getText().toString();
-		int rw=Integer.valueOf(rows);
-		int cl=Integer.valueOf(cols);
+		int dim[]={Integer.valueOf(rws.getText().toString()),
+				Integer.valueOf(cls.getText().toString())};
+		i.putExtra("sam.matrixCalc.Dime.Dims", dim);
+		}
 		
 	}
 
-}
+

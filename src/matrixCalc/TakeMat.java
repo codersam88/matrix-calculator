@@ -1,6 +1,7 @@
 package matrixCalc;
 import sam.matrixcalc.R;
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +18,7 @@ public class TakeMat extends Activity{
 		super.onCreate(savedInstanceState);
 		lOut= new LinearLayout(this);
 		lOut.setOrientation(LinearLayout.VERTICAL);
-		createSkel(3,4);//for rows
+		createSkel();//for rows
 		//createSubLs(2);
 		setContentView(lOut);
 
@@ -32,15 +33,14 @@ public class TakeMat extends Activity{
 
 		}
 	}
-	void createSkel(int r,int c){
-		//tv = new TextView(this);
-		//tv.setText("hello");
-		lIl=new LinearLayout[r];
-		etm = new EditText[r][c];
-		for(int i=0; i < r; i++){
+	void createSkel(){
+		int dim[] = getIntent().getExtras().getIntArray("sam.matrixCalc.Dime.Dims");
+		lIl=new LinearLayout[dim[0]];
+		etm = new EditText[dim[0]][dim[1]];
+		for(int i=0; i < dim[0]; i++){
 			lIl[i] = new LinearLayout(this);
 			lIl[i].setOrientation(LinearLayout.HORIZONTAL);
-			for(int j=0; j<c;j++){
+			for(int j=0; j<dim[1];j++){
 				etm[i][j]= new EditText(this);
 				lIl[i].addView(etm[i][j]);
 				
