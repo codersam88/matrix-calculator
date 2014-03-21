@@ -1,25 +1,48 @@
 package matrixCalc;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+
 import sam.matrixcalc.R;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.view.View.OnClickListener;
 
 public class TakeMat extends Activity{
 	LinearLayout lOut;
 	LinearLayout lIl[];
 	EditText etm[][];
-	TextView tv;
+	Button sav;
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
 		lOut= new LinearLayout(this);
 		lOut.setOrientation(LinearLayout.VERTICAL);
 		createSkel();//for rows
+		sav = new Button(this);
+		sav.setText("save");
 		//createSubLs(2);
+		sav.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				String filA = "maxA";
+				try {
+					FileOutputStream fos = openFileOutput(filA, Context.MODE_PRIVATE);
+				} catch (FileNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+			}
+		});
+		lOut.addView(sav);
 		setContentView(lOut);
 
 	}
