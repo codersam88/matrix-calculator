@@ -1,6 +1,7 @@
 package matrixCalc;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 
 import sam.matrixcalc.R;
 import android.app.Activity;
@@ -35,10 +36,20 @@ public class TakeMat extends Activity{
 				String filA = "maxA";
 				try {
 					FileOutputStream fos = openFileOutput(filA, Context.MODE_PRIVATE);
+					for(int i = 0; i < etm.length; i++){
+						for (int j = 0; j < etm[0].length; j++) {
+							fos.write(etm[i][j].getText().toString().getBytes());
+							fos.close();
+						}
+					}
 				} catch (FileNotFoundException e) {
+					
+					e.printStackTrace();
+				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				
 				
 			}
 		});
