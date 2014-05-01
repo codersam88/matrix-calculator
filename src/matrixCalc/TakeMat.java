@@ -8,6 +8,9 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +23,7 @@ public class TakeMat extends Activity{
 	LinearLayout lIl[];
 	EditText etm[][];
 	Button sav;
+	Button scnd;
 	@Override
 	protected void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
@@ -27,7 +31,9 @@ public class TakeMat extends Activity{
 		lOut.setOrientation(LinearLayout.VERTICAL);
 		createSkel();//for rows
 		sav = new Button(this);
+		scnd = new Button(this);
 		sav.setText("save");
+		scnd.setText("Enter 2nd matrix");
 		//createSubLs(2);
 		sav.setOnClickListener(new OnClickListener() {
 			
@@ -39,9 +45,11 @@ public class TakeMat extends Activity{
 					for(int i = 0; i < etm.length; i++){
 						for (int j = 0; j < etm[0].length; j++) {
 							fos.write(etm[i][j].getText().toString().getBytes());
-							fos.close();
+							
 						}
 					}
+					fos.close();
+					lOut.addView(scnd);
 				} catch (FileNotFoundException e) {
 					
 					e.printStackTrace();
@@ -85,5 +93,30 @@ public class TakeMat extends Activity{
 
 
 	}
+	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
+    {
+        MenuInflater menuInflater = getMenuInflater();
+        menuInflater.inflate(R.layout.menu, menu);
+        return true;
+    }
+	
+	@Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+         
+        switch (item.getItemId())
+        {
+        case R.id.scal:
+            
+            return true;
+ 
+        
+ 
+        default:
+            return super.onOptionsItemSelected(item);
+        }
+    }
 
 }

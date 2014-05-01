@@ -7,5 +7,7 @@
     <string name="hrows">no of rows</string>
     <string name="hcols">no of cols</string>
     <string name="takDim">Enter</string>
+    <string name="scal">Scalar operations</string>
+    
 
 </resources>
