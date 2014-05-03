@@ -63,6 +63,15 @@ public class TakeMat extends Activity{
 		});
 		lOut.addView(sav);
 		setContentView(lOut);
+		scnd.setOnClickListener(new OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent intent = new Intent(getApplicationContext(),Dime.class);
+				startActivity(intent);
+				
+			}
+		});
 
 	}
 
